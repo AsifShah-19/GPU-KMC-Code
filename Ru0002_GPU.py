@@ -7,14 +7,13 @@ import matplotlib.pyplot as plt
 from numba import cuda
 import math as mh
 import time
-import sys
 
 #Physical parameters
 a = np.float64(271e-12)                                                     # Surface distance parameters
 xD = np.float64(a*mh.cos(mh.radians(60)))                                   # Surface distance parameters
 yD = np.float64(a*mh.sin(mh.radians(60)))                                   # Surface distance parameters
 kB = np.float64(8.617e-5)                                                   # Boltzmann constant (eV/K)
-T = float(sys.argv[1])                                                      # Input from command line - Temperature (K)
+T = 923                                                                     # Temperature (K)
 PF = 1e13                                                                   # Attempt frequency (1/s)
 G = 6                                                                       # Geometric parameter (e.g., 2D(Hexagon) has 4(6) jumps directions)
 
