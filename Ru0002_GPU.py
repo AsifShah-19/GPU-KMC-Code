@@ -15,7 +15,7 @@ yD = np.float64(a*mh.sin(mh.radians(60)))                                   # Su
 kB = np.float64(8.617e-5)                                                   # Boltzmann constant (eV/K)
 T = 923                                                                     # Temperature (K)
 PF = 1e13                                                                   # Attempt frequency (1/s)
-G = 6                                                                       # Geometric parameter (e.g., 2D(Hexagon) has 4(6) jumps directions)
+G = 4                                                                       # Geometric parameter (e.g., 2D(Hexagon) has 4(6) jumps directions)
 
 #Energy and rates
 Ea = np.array([1.73,1.73,1.73,1.73,1.73,1.73], dtype=np.float64)              # DFT-LCAO GGA level CINEB energies from a reference Ru(0002) atom to neighboring six Ru(0002) atoms
