@@ -39,10 +39,10 @@ d_seeds = cuda.device_array(Ensem, dtype=np.uint32)                         # In
 
 @cuda.jit                                                                   # Translates and compiles python code into CUDA kernels for GPU execution
 def kmc_fused_kernel(V0, ktot, KMCSteps, d_seeds, sum_MSD, sum_Time, CumProb):
-    i = cuda.grid(1)                                                        # Obtaining global thread index
-    if i >= d_seeds.size:                                                   # Ensuring threads dont exceed total number of ensembles
+    ith = cuda.grid(1)                                                        # Obtaining global thread index
+    if ith >= d_seeds.size:                                                   # Ensuring threads dont exceed total number of ensembles
         return
-    seed = d_seeds[i]                                                       # Assigning random number for each thread based on its global index i
+    seed = d_seeds[ith]                                                       # Assigning random number for each thread based on its global index i
 
     PRX = seed * np.uint32(123457) % np.uint32(199)
     PRY = seed * np.uint32(123458) % np.uint32(199)
