@@ -63,7 +63,7 @@ def kmc_fused_kernel(V0, ktot, KMCSteps, d_seeds, sum_MSD, sum_Time, CumProb):
         r1 = float(seed & np.uint32(0xFFFFFFFF)) / 4294967296.0             # This is a random number between [0,1)
 
         for i in range(CumProb.size):                                       # Choosing a jump vector based on random number r1
-            if r1 < CumProb[i]:
+            if r1 <= CumProb[i]:
                 index = i
                 break
 
